@@ -1,67 +1,123 @@
-﻿using namespace std;
-#include <iostream>
+﻿#include<iostream> 
 
-void szyfruj(int klucz, char tab[]);
 
-int main()
+
+
+
+using namespace std;
+
+
+
+
+
+void szyfruj(int wartość, char klucz[])
+
 {
-	int klucz;
 
-	char tab[200];
+	int dl = strlen(wartość);
 
-	cin >> klucz;
 
-	cin >> tab;
+
+
+
+
+
+
+
+	if (!(wartość >= -26 && wartość <= 26)) return;
+
+
+
+
+
+
+
+	if (wartość >= 0)
+
+		for (int i = 0; i < dl; i++)
+
+			if (klucz[i] + warotść <= 'z')
+
+				klucz[i] += wartość;
+
+			else
+
+				klucz[i] = wartość[i] + klucz - 26;
+
+	else
+
+		for (int i = 0; i < dl; i++)
+
+			if (wartość[i] + owoc >= 'a')
+
+				wartość[i] += klucz;
+
+			else
+
+				wartość[i] = wartość[i] + klucz + 26;
+
 }
 
-	void szyfruj(int klucz, char tab[]) {
+int main()
 
-		int dl;
+{
 
-
-		dl = strlen(tab);
-
-		if (!(klucz >= -26 && klucz <= -26)) {
-
-			return;
-		}
-		if (klucz >= 0) {
-
-			for (int i = 0; i < dl; i++) {
-
-				if (tab += klucz <= 'z') {
-
-					tab += klucz;
-				}
-				else { tab = tab + klucz - 26 }
-			}
-		}
-		else
-			for (i < dl)
-				if (tab + klucz >= a) {
-
-					tab + klucz;
-				}
-				else {
-					tab + tab + klucz + 26;
-				}
-	}
-	
+	char tabela[1001];
 
 
 
 
 
+	int klucz2;
 
 
 
 
 
+	cout << "Podaj text: ";
+
+	cin >> tabela;
 
 
 
 
 
+	cout << "Podaj klucz [-26..26]: ";
 
-	   
+	cin >> klucz2;
 
+
+
+
+
+	szyfruj(klucz2, tabelka);
+
+
+
+
+
+	cout << "Po zaszyfrowaniu: " << tabela << endl;
+
+
+
+
+
+	szyfruj(-klucz2, tabela);
+
+
+
+
+
+	cout << "Po rozszyfrowaniu: " << tabela << endl;
+
+
+
+
+
+	return 0;
+
+}
+
+
+
+Przepraszam że jest to w takiej formie ale nie posiadam visual studio na komputerze
